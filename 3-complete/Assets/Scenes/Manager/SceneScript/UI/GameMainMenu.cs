@@ -1,7 +1,8 @@
-﻿using Script.Manager;
+﻿using KPU;
+using KPU.Manager;
 using UnityEngine;
 
-namespace Script.UI
+namespace Manager.UI
 {
     public class GameMainMenu : MonoBehaviour
     {

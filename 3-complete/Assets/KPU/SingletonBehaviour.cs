@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Script
+namespace KPU
 {
     public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-﻿using Script.Manager;
+﻿using KPU.Manager;
 using UnityEngine;
 
-namespace Script.UI
+namespace Manager.UI
 {
     public class PauseButtonUi : MonoBehaviour
     {

@@ -1,9 +1,9 @@
-﻿using System;
-using Script.Manager;
+﻿using KPU.Manager;
+using KPU.Time;
 using TMPro;
 using UnityEngine;
 
-namespace Script.Time.Ui    
+namespace Timer.Ui    
 {
     public class TimerStartButtonUi : MonoBehaviour
     {

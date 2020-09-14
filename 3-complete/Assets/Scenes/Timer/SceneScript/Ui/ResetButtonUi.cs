@@ -1,7 +1,8 @@
-﻿using Script.Manager;
+﻿using KPU.Manager;
+using KPU.Time;
 using UnityEngine;
 
-namespace Script.Time.Ui
+namespace Timer.Ui
 {
     public class ResetButtonUi : MonoBehaviour
     {

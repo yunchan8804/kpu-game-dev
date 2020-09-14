@@ -1,8 +1,8 @@
-﻿using Script.Manager;
+﻿using KPU.Manager;
 using TMPro;
 using UnityEngine;
 
-namespace Script.UI
+namespace Manager.UI
 {
     public class GameStatusTextUi : MonoBehaviour
     {

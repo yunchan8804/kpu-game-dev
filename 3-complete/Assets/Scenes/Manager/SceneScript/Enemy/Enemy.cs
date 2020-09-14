@@ -1,8 +1,9 @@
-﻿using System;
-using Script.Manager;
+﻿using KPU;
+using KPU.Manager;
+using Manager.Tower;
 using UnityEngine;
 
-namespace Script.Enemy
+namespace Manager.Enemy
 {
     public class Enemy : MonoBehaviour
     {
@@ -64,7 +65,7 @@ namespace Script.Enemy
         {
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<Tower.TowerController>().Damage(damage);
+                other.GetComponent<TowerController>().Damage(damage);
                 gameObject.SetActive(false);
             }
         }

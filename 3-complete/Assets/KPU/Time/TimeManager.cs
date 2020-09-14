@@ -1,4 +1,4 @@
-﻿namespace Script.Time
+﻿namespace KPU.Time
 {
     public class TimeManager : SingletonBehaviour<TimeManager>
     {

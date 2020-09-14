@@ -1,4 +1,4 @@
-namespace Script
+namespace KPU
 {
     public enum State
     {

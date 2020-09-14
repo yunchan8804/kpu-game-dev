@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
-using Script.Manager;
-using Script.Tower;
+using KPU.Manager;
+using Manager.Tower;
 using TMPro;
 using UnityEngine;
 
-namespace Script.UI
+namespace Manager.UI
 {
     public class GameStatusPanelUi : MonoBehaviour
     {

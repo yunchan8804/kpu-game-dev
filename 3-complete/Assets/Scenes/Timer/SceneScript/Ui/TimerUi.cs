@@ -1,8 +1,9 @@
 using System;
+using KPU.Time;
 using TMPro;
 using UnityEngine;
 
-namespace Script.Time.Ui
+namespace Timer.Ui
 {
     public class TimerUi : MonoBehaviour
     {

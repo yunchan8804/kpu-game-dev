@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Script.Manager
+namespace KPU.Manager
 {
     public class GameManager : SingletonBehaviour<GameManager>
     {

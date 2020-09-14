@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Script.Manager;
+using KPU.Manager;
 using TMPro;
 using UnityEngine;
 
-namespace Script.Time.Ui
+namespace Timer.Ui
 {
     public class TimeRecordUi : MonoBehaviour
     {

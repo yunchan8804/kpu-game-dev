@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using Script.Manager;
+using KPU.Manager;
 using UnityEngine;
 
-namespace Script.Controllers
+namespace KPU.Controllers
 {
     public class SpawnController : MonoBehaviour
     {

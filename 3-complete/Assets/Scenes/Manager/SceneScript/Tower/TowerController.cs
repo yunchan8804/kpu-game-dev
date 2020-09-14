@@ -1,8 +1,9 @@
 ﻿using System.Collections;
-using Script.Manager;
+using KPU;
+using KPU.Manager;
 using UnityEngine;
 
-namespace Script.Tower
+namespace Manager.Tower
 {
     public class TowerController : MonoBehaviour
     {

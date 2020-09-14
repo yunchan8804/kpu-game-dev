@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Script.Manager
+namespace KPU.Manager
 {
     public class EventManager : SingletonBehaviour<EventManager>
     {
