@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scenes.InputSystem
+namespace InputSystem
 {
     public class Platform : MonoBehaviour
     {
