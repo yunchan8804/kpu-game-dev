@@ -1,7 +1,7 @@
 namespace Scenes.AI
 {
-    using System;
     using System.Collections;
+    using KPU.Manager;
     using UnityEngine;
 
     public class Bullet : MonoBehaviour
@@ -45,6 +45,9 @@ namespace Scenes.AI
         private IEnumerator BulletLifeRoutine()
         {
             yield return new WaitForSeconds(lifeTime);
+            var smokeGameObject = ObjectPoolManager.Instance.Spawn("effect_dust");
+            smokeGameObject.SetActive(true);
+            smokeGameObject.transform.position = transform.position;
             gameObject.SetActive(false);
         }
 
