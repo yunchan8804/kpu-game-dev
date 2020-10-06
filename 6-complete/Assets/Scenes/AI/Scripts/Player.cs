@@ -1,15 +1,22 @@
 ﻿namespace Scenes.AI
 {
+    using System;
+    using System.Collections;
     using UnityEngine;
     using UnityEngine.AI;
 
     public class Player : MonoBehaviour, IDamagable
     {
-        private NavMeshAgent _agent;
-        private PlayerState _state;
         [SerializeField] private float speed;
         [SerializeField] private Camera cam;
         [SerializeField] private Stat stat;
+        [SerializeField] private float noDamageTime = 0.5f;
+
+        private NavMeshAgent _agent;
+        private PlayerState _state;
+        private Coroutine _damageRoutine;
+        private bool _isdamagable;
+        private MeshRenderer _renderer;
 
         public PlayerState State => _state;
 
@@ -20,6 +27,17 @@
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
+            _renderer = GetComponent<MeshRenderer>();
+        }
+
+        private void OnEnable()
+        {
+            _isdamagable = true;
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(_damageRoutine);
         }
 
         private void Update()
@@ -36,7 +54,24 @@
 
         public void Damage(float damageAmount)
         {
+            if (!_isdamagable) return;
+            
+            _damageRoutine = StartCoroutine(DamageRoutine());
             stat.AddHp(damageAmount);
+        }
+
+        private IEnumerator DamageRoutine()
+        {
+            var material = _renderer.material;
+            var defaultColor = material.color;
+            
+            material.color = new Color(1,1,1, 0.5f);
+            _isdamagable = false;
+            
+            yield return new WaitForSeconds(noDamageTime);
+            
+            material.color = defaultColor;
+            _isdamagable = true;
         }
     }
 }

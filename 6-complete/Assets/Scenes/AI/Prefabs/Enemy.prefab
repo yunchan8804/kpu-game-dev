@@ -385,6 +385,11 @@ MonoBehaviour:
     _shootSpeed: 20
     _attackRate: 1
     _attackPower: 1
+  sightAngle: 0.2
+  sightLength: 2
+  layerToCast:
+    serializedVersion: 2
+    m_Bits: 2560
   hitPlayerDistanceOffset: 1
 --- !u!1 &2602421160464029307
 GameObject:
