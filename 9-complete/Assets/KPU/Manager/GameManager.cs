@@ -2,6 +2,8 @@
 
 namespace KPU.Manager
 {
+    using System;
+
     public class GameManager : SingletonBehaviour<GameManager>
     {
         [SerializeField] private State state;

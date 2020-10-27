@@ -1,6 +1,5 @@
 ﻿namespace Scenes.UI
 {
-    using System;
     using AI;
     using UnityEngine;
     using UnityEngine.UI;
@@ -32,13 +31,17 @@
 
         private void Update()
         {
-            if (_damagable != null)
-            {
-                _slider.value = _damagable.Hp / _damagable.MaxHp;
-                var c = _camera.WorldToScreenPoint(_damagableTransform.position);
-                var r = _canvas.pixelRect;
-                _sliderRectTransform.anchoredPosition = new Vector2(c.x + uiOffset.x, c.y + uiOffset.y);
-            }
+            if (_damagable == null) return;
+
+            _slider.value = _damagable.Hp / _damagable.MaxHp;
+            var width = _canvas.pixelRect.width;
+            var height = _canvas.pixelRect.height;
+            var viewportPoint = _camera.WorldToViewportPoint(_damagableTransform.position);
+            var scale = _canvas.scaleFactor;
+
+            _sliderRectTransform.anchoredPosition =
+                new Vector2(width * viewportPoint.x / scale + uiOffset.x,
+                    height * viewportPoint.y / scale + uiOffset.y);
         }
     }
 }

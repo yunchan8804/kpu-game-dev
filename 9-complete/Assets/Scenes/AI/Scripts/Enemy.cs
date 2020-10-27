@@ -121,12 +121,10 @@
         {
             _agent.isStopped = false;
 
-            print($"Distance: {Vector3.Distance(transform.position, _targetPosition)}, TargetPosition: {_targetPosition}");
-            
             if (_targetPosition == Vector3.zero || Vector3.Distance(transform.position, _targetPosition) < _agent.stoppingDistance)
             {
                 NavMesh.SamplePosition(new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y,
-                    transform.position.z + Random.Range(-2, 2)), out var hit, 2f, 0);
+                    transform.position.z + Random.Range(-2, 2)), out var hit, 4f, 0);
                 if(hit.hit)
                     _targetPosition = hit.position;
                 
