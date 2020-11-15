@@ -2,6 +2,8 @@
 
 namespace Scenes.Root.Ui
 {
+    using KPU.Manager;
+
     public class CloseButtonUi : MonoBehaviour
     {
 
@@ -9,6 +11,7 @@ namespace Scenes.Root.Ui
         public void Close()
         {
             rootUiBody.gameObject.SetActive(false);
+            EventManager.Emit("root_ui_close");
         }
     }
 }

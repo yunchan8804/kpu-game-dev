@@ -4,11 +4,15 @@ namespace Scenes.Root
 {
     using System.Collections.Generic;
     using System.Linq;
+    using KPU.Manager;
 
     public class FirstPersonInteractionCamera : MonoBehaviour
     {
         [SerializeField] private Camera playercamera;
         [SerializeField] private float interactAngle = 0.5f;
+
+        private MouseLookScript _mouseLookScript;
+        private GunScript _gunScript; 
 
         /// <summary>
         /// 인터랙션이 가능한지 여부
@@ -22,11 +26,31 @@ namespace Scenes.Root
         private void Awake()
         {
             _interactables = new List<IInteractable>();
+            _mouseLookScript = GetComponent<MouseLookScript>();
         }
 
         private void Start()
         {
             _isInteractPossible = true;
+            
+            EventManager.On("root_ui_open", OnOpen);
+            EventManager.On("root_ui_close", OnClose);
+        }
+
+        private void OnClose(object obj)
+        {
+            if (_gunScript == null) _gunScript = FindObjectOfType<GunScript>();
+            
+            _gunScript.enabled = true;
+            _mouseLookScript.enabled = true;
+        }
+
+        private void OnOpen(object obj)
+        {
+            if (_gunScript == null) _gunScript = FindObjectOfType<GunScript>();
+            
+            _gunScript.enabled = false;
+            _mouseLookScript.enabled = false;
         }
 
         private void Update()

@@ -1,8 +1,6 @@
 ﻿namespace Scenes.Root
 {
-    using System;
     using System.Collections.Generic;
-    using Data;
     using KPU.Manager;
     using UnityEngine;
     

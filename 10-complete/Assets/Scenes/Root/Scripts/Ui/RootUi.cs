@@ -2,8 +2,6 @@
 
 namespace Scenes.Root.Ui
 {
-    using System;
-    using System.Linq;
     using Data;
     using KPU.Manager;
     using UnityEngine.UI;
